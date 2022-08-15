@@ -19,4 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('estudiantes/{codigo}', 'App\Http\Controllers\Academico_matriculaController@index');
+Route::get('estudiantes/{codigo}', 'App\Http\Controllers\Academico_matriculaController@index')
+            ->middleware('auth:sanctum');
+
+Route::post('login', 'App\Http\Controllers\Api\loginController@login');            
